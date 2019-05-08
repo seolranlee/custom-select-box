@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>select-box</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        h1{
+            color: #dac05f;
+            letter-spacing: 0.5em;
+
+        }
+        .select-box:focus{
+            background-color: #dac05f;
+        }
+    </style>
+</head>
+<body>
+<h1>MY VOICE</h1>
+<select class="select-box">
+    <option value="fine">01. Fine</option>
+    <option value="cover up">02. Cover Up</option>
+    <option value="feel so fine">03. 날개 (Feel So Fine)</option>
+    <option value="i got love">04. I Got Love</option>
+    <option value="i'm ok">05. I'm OK</option>
+    <option value="time lapse">06. Time Lapse</option>
+    <option value="sweet love">07. Sweet Love</option>
+    <option value="when i was young">08. When I Was Young</option>
+    <option value="lonely night">09. Lonely NIght</option>
+    <option value="love in color">10. 수채화 (Love in Color)</option>
+    <option value="fire">11. Fire</option>
+    <option value="eraser">12. Eraser</option>
+</select>
+<script>
+    $(document).ready(function(){
+        var isOpened = false;
+        $('.select-box')
+            .on('click', function (e) {
+                isOpened = !isOpened;
+                if(isOpened === false){
+                    e.target.blur();
+                }
+
+            })
+            .on('change', function (e) {
+                e.target.blur();
+
+            })
+            .on('focus', function () {
+                isOpened = false;
+
+            })
+            .on('blur', function () {
+                isOpened = false;
+
+            });
+    })
+</script>
+</body>
+</html>
